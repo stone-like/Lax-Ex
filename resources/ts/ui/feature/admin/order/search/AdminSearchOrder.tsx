@@ -23,6 +23,8 @@ export const AdminSearchOrder = (
     const searchObj = props.location.state
         ? props.location.state.searchObj
         : "";
+    console.log("locationState", props.location.state);
+    console.log("searchObj", searchObj);
 
     const [orderList, setOrderList] = useState<orderEntityList>();
 
