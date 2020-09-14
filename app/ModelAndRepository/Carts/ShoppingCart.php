@@ -40,7 +40,9 @@ class ShoppingCart extends Cart
 
     public function instance($instance = null)
     {
-        $instance = $instance ?: self::DEFAULT_INSTANCE;
+        // $instance = $instance ?: self::DEFAULT_INSTANCE;
+        $instance = $instance ?: "default";
+
 
         if ($instance instanceof InstanceIdentifier) {
             $this->discount = $instance->getInstanceGlobalDiscount();
