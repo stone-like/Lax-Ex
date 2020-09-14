@@ -3,7 +3,7 @@ import {
     StaticContext,
     Redirect,
     RouteComponentProps,
-    useHistory
+    useHistory,
 } from "react-router";
 
 import { Loader } from "semantic-ui-react";
@@ -45,7 +45,7 @@ export const AdminSearchOrder = (
 
     const SearchOrder = async () => {
         console.log(searchObj);
-        if (searchObj === "") {
+        if (searchObj.input === "") {
             await SetAllOrder();
             return;
         }
