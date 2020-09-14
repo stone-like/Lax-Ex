@@ -45,7 +45,7 @@ export const AdminSearchOrder = (
 
     const SearchOrder = async () => {
         console.log(searchObj);
-        if (searchObj.input === "") {
+        if (searchObj === "") {
             await SetAllOrder();
             return;
         }

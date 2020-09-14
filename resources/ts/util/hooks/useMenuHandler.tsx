@@ -13,14 +13,18 @@ export const useMenuHandler = (isAdmin: boolean) => {
         dispatch({
             type: "SETACTIVEPAGE",
             payload: {
-                page
-            }
+                page,
+            },
         });
     };
 
     //useMenuHandlerでadminとuserまとめているけど、正直処理が複雑化してくると共通化もそんなに良くないなと思えてしまう
     //コード量は減るけど、ロジックが読みづらくなってくるのは相当筋悪いと思う,下のMenuHandlerとかもうすでに読みづらい
     const MenuHandler = (to: string) => {
+        if (to === "order") {
+            return isAdmin && history.push(`/admin/${to}`);
+        }
+
         if (to === "category") {
             return (
                 isAdmin &&
@@ -28,9 +32,9 @@ export const useMenuHandler = (isAdmin: boolean) => {
                     pathname: `/admin/${to}`,
                     state: {
                         searchObj: {
-                            input: ""
-                        }
-                    }
+                            input: "",
+                        },
+                    },
                 })
             );
         }
@@ -46,8 +50,8 @@ export const useMenuHandler = (isAdmin: boolean) => {
             return history.push({
                 pathname: `/admin/${to}`,
                 state: {
-                    method: "All"
-                }
+                    method: "All",
+                },
             });
         }
 
@@ -56,17 +60,17 @@ export const useMenuHandler = (isAdmin: boolean) => {
                   pathname: `/admin/${to}`,
                   state: {
                       searchObj: {
-                          input: ""
-                      }
-                  }
+                          input: "",
+                      },
+                  },
               })
             : history.push({
                   pathname: `/${to}`,
                   state: {
                       searchObj: {
-                          input: ""
-                      }
-                  }
+                          input: "",
+                      },
+                  },
               });
     };
 
