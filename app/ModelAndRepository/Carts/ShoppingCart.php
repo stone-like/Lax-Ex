@@ -16,6 +16,7 @@ class ShoppingCart extends Cart
 {
     //modelにshippingの状態を持たせるのではなくdbと連携した方が良さそうな気もするけど、cartは一時的なものなので多分その必要はない
 
+
     protected $session;
     protected $events;
     protected $instance;
@@ -32,7 +33,7 @@ class ShoppingCart extends Cart
             $this->session->put("shippingFee", 0); //ここでsession->putしてしまうとすでに値が入っていても上書きしてしまうのでsession->hasがいる
         }
 
-        $this->instance(self::DEFAULT_INSTANCE);
+        $this->instance('default');
 
         parent::__construct($this->session, $this->events, $this->instance);
     }
