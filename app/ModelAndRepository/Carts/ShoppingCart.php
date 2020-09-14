@@ -35,14 +35,15 @@ class ShoppingCart extends Cart
 
         $this->instance('default');
 
-        parent::__construct($this->session, $this->events, $this->instance);
+        // parent::__construct($this->session, $this->events, $this->instance);
+        parent::__construct($this->session, $this->events);
     }
 
     public function instance($instance = null)
     {
         // $instance = $instance ?: self::DEFAULT_INSTANCE;
         $instance = $instance ?: "default";
-
+        dump("instance", $instance);
 
         if ($instance instanceof InstanceIdentifier) {
             $this->discount = $instance->getInstanceGlobalDiscount();
