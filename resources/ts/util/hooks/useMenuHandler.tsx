@@ -21,7 +21,10 @@ export const useMenuHandler = (isAdmin: boolean) => {
     //useMenuHandlerでadminとuserまとめているけど、正直処理が複雑化してくると共通化もそんなに良くないなと思えてしまう
     //コード量は減るけど、ロジックが読みづらくなってくるのは相当筋悪いと思う,下のMenuHandlerとかもうすでに読みづらい
     const MenuHandler = (to: string) => {
+        console.log("menuhandlerStart");
+        console.log("isAdmin", isAdmin);
         if (to === "order") {
+            console.log("orderHandler", to);
             return isAdmin && history.push(`/admin/${to}`);
         }
 
