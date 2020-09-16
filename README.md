@@ -6,7 +6,10 @@ admin側ではroleとpermissionを用いて権限設計をしました。
 フロントエンドはEntity、Repository、UseCase含めて、完全にcoreの機能とreactを分離して書いています。  
 ただvalidationはreact-hooks-form任せにしています。  
 responsive対応でスマートフォンからでも見やすくなっています。
-
+  
+## インフラ構成  
+![aws構成図 (1)](https://user-images.githubusercontent.com/47190494/93313033-e7e07b80-f842-11ea-91bd-2e0ee2840472.png)  
+  
 ## user側動作例  
 -**home**  
 ![home](https://user-images.githubusercontent.com/47190494/92988508-273b5f00-f507-11ea-983b-767b2bf9ea39.gif)  
