@@ -62,8 +62,8 @@ export const AdminSignIn = () => {
         // clearUser();
         // persistInteractor.removeLocalStorage("user")
 
-        //awaiを付けないとUserLogoutとAdminSignInが混線してしまうので本島に注意
-        await userLogoutHandler();
+        //awaiを付けないとUserLogoutとAdminSignInが混線してしまうので注意
+        await userLogoutHandler(false)();
         //ここをuseUserをつかってlocalStorageからも削除
 
         const res = await signInInteractor.signInAdmin(

@@ -23,7 +23,7 @@ export const useAdmin = () => {
         persistInteractor.setLocalStorageWithExpiry("admin", admin, ttl);
     };
 
-    const adminLogoutHandler = async () => {
+    const adminLogoutHandler = (isAdmin: boolean) => async () => {
         //普通のadminlogoutでも使うんだけど、ユーザーページに行った際にも使う
         //もしlocalにadminが残っていればlogout、なければ何もしない
         //なのでユーザーページに行ったときにadminがlocalに残っている最初の一回のみ起動することを想定している
@@ -38,7 +38,9 @@ export const useAdmin = () => {
         // if (fromName === "user") {
         //     return history.push("/");
         // }
-        // return history.push("/admin");
+        if (isAdmin === true) {
+            return history.push("/admin");
+        }
     };
 
     const restoreFromLocalStorageHandler = () => {

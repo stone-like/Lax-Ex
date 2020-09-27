@@ -24,7 +24,7 @@ export const AdminLogout = () => {
     // };
     const { adminLogoutHandler } = useAdmin();
     useEffect(() => {
-        adminLogoutHandler();
+        adminLogoutHandler(true)();
     }, []);
     return (
         <div>

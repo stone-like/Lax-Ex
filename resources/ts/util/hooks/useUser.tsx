@@ -24,7 +24,7 @@ export const useUser = () => {
         persistInteractor.setLocalStorageWithExpiry("user", user, ttl);
     };
 
-    const userLogoutHandler = async () => {
+    const userLogoutHandler = (isUser: boolean) => async () => {
         await logoutInteractor.logoutUser();
         clearUser();
         persistInteractor.removeLocalStorage("user");
@@ -32,6 +32,9 @@ export const useUser = () => {
         // if (fromName === "admin") {
         //     return history.push("/admin");
         // }
+        if (isUser === true) {
+            return history.push("/");
+        }
         // return history.push("/");
     };
 

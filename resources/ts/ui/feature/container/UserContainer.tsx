@@ -101,7 +101,7 @@ export const UserContainer = () => {
     }, [user]);
 
     useEffect(() => {
-        adminLogoutHandler();
+        adminLogoutHandler(false)();
     }, []);
     return (
         <UserDiv>

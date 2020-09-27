@@ -22,7 +22,7 @@ export const UserLogout = () => {
     //logoutしたらreload挟んだ方がよさそう
     const { userLogoutHandler } = useUser();
     useEffect(() => {
-        userLogoutHandler();
+        userLogoutHandler(true)();
     }, []);
     return (
         <div>
