@@ -39,12 +39,21 @@ http://lax-ex.net
 (admin側)  
 http://lax-ex.net/admin  
   
+  
 ## userLogin  
 email:test@email.com  
 password:password  
 ## adminLogin  
+### super_admin  
 email:superadmin@email.com  
 password:password  
+### admin  
+email:admin@email.com  
+password:password  
+### staff  
+email:staff@email.com  
+password:password  
+
 ## テスト用のクレジットカード
 4242 4242 4242 4242　09/40 555  
     
